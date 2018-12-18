@@ -42,24 +42,24 @@
         </android.support.design.widget.TextInputLayout>
     </LinearLayout>
 
-    <!--<TableLayout-->
-        <!--android:layout_width="wrap_content"-->
-        <!--android:layout_height="wrap_content"-->
-        <!--android:stretchColumns="*"-->
-        <!--&gt;-->
-        <!--<TableRow>-->
-            <!---->
-        <!--</TableRow>-->
-        <!--<TableRow>-->
-            <!--<ListView-->
-                <!--android:id="@+id/listKota"-->
-                <!--android:layout_width="match_parent"-->
-                <!--android:layout_height="431dp"-->
-                <!--android:layout_marginStart="8dp"-->
-                <!--android:layout_marginEnd="8dp"-->
-                <!--android:layout_marginBottom="32dp">-->
-            <!--</ListView>-->
-        <!--</TableRow>-->
-    <!--</TableLayout>-->
+    <TableLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:stretchColumns="*"
+        >
+        <TableRow>
+            
+        </TableRow>
+        <TableRow>
+            <ListView
+                android:id="@+id/listKota"
+                android:layout_width="match_parent"
+                android:layout_height="431dp"
+                android:layout_marginStart="8dp"
+                android:layout_marginEnd="8dp"
+                android:layout_marginBottom="32dp">
+            </ListView>
+        </TableRow>
+    </TableLayout>
 
 </android.support.constraint.ConstraintLayout>

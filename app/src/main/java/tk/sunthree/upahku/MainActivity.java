@@ -45,7 +45,29 @@ public class MainActivity extends AppCompatActivity {
         inputLayoutSearch = (TextInputLayout) findViewById(R.id.input_search_layout);
         inputSearch = (EditText) findViewById(R.id.input_search);
 
-        inputSearch.addTextChangedListener(new TextWatcher() {
+       // Data Array yang akan ditampilkan di list
+       String kota[] = {"DKI Jakarta","Papua","Sulawesi Utara","Kepulauan Bangka Belitung",
+               "Sulawesi Selatan" };
+       int ump[] = {3100000,2435000,2400000,2314500,225000};
+       // ambil list_view dan inputsearchnya di xml
+       lv = (ListView) findViewById(R.id.listKota);
+       inputSearch = (EditText) findViewById(R.id.edtSearch);
+
+       // proses menambahkan array kedalam listview
+       adapter = new ArrayAdapter<String>(this, R.layout.item_list,
+               R.id.txt1, kota);
+       lv.setAdapter(adapter);
+       lv.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+           @Override
+           public void onItemClick(AdapterView<?> adapterView, View view, int position, long l) {
+               String nama_kota = lv.getItemAtPosition(position).toString();
+               Intent intent = new Intent(getApplicationContext(),Chart.class);
+
+               startActivity(intent);
+           }
+       });
+
+       inputSearch.addTextChangedListener(new TextWatcher() {
             @Override
             public void beforeTextChanged(CharSequence charSequence, int i, int i1, int i2) {
 
@@ -61,27 +83,5 @@ public class MainActivity extends AppCompatActivity {
 
             }
         });
-
-//        // Data Array yang akan ditampilkan di list
-//        String kota[] = {"DKI Jakarta","Papua","Sulawesi Utara","Kepulauan Bangka Belitung",
-//                "Sulawesi Selatan" };
-//        int ump[] = {3100000,2435000,2400000,2314500,225000};
-//        // ambil list_view dan inputsearchnya di xml
-//        lv = (ListView) findViewById(R.id.listKota);
-//        inputSearch = (EditText) findViewById(R.id.edtSearch);
-//
-//        // proses menambahkan array kedalam listview
-//        adapter = new ArrayAdapter<String>(this, R.layout.item_list,
-//                R.id.txt1, kota);
-//        lv.setAdapter(adapter);
-//        lv.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-//            @Override
-//            public void onItemClick(AdapterView<?> adapterView, View view, int position, long l) {
-//                String nama_kota = lv.getItemAtPosition(position).toString();
-//                Intent intent = new Intent(getApplicationContext(),Chart.class);
-//
-//                startActivity(intent);
-//            }
-//        });
     }
 }

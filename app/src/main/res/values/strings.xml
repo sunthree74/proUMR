@@ -1,4 +1,7 @@
 <resources>
-    <string name="app_name">Upahku</string>
+    <string name="app_name">IndoSalary</string>
     <string name="hint_search">Search</string>
+    <string name="title_activity_maps">Map</string>
+    <string name="title_activity_home">HomeActivity</string>
+    <string name="setting_name">Settings</string>
 </resources>

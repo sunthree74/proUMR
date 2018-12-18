@@ -51,7 +51,7 @@ public class MainActivity extends AppCompatActivity {
        int ump[] = {3100000,2435000,2400000,2314500,225000};
        // ambil list_view dan inputsearchnya di xml
        lv = (ListView) findViewById(R.id.listKota);
-       inputSearch = (EditText) findViewById(R.id.edtSearch);
+       inputSearch = (EditText) findViewById(R.id.input_search);
 
        // proses menambahkan array kedalam listview
        adapter = new ArrayAdapter<String>(this, R.layout.item_list,

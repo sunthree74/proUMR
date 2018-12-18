@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#008577</color>
+    <color name="colorPrimaryDark">#00574B</color>
+    <color name="colorAccent">#D81B60</color>
+    <color name="oren">#FF5500</color>
+    <color name="item">#171717</color>
+    <color name="biru">#1C4D99</color>
+    <color name="biru_muda">#01A7E5</color>
+    <color name="google">#E7451F</color>
+    <color name="abu">#252525</color>
+    <color name="abu_muda">#484848</color>
+</resources>

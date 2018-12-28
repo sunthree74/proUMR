@@ -2,7 +2,7 @@
 <resources>
     <color name="colorPrimary">#008577</color>
     <color name="colorPrimaryDark">#00574B</color>
-    <color name="colorAccent">#D81B60</color>
+    <color name="colorAccent">#e6d7dc</color>
     <color name="oren">#FF5500</color>
     <color name="item">#171717</color>
     <color name="biru">#1C4D99</color>

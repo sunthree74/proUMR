@@ -3,19 +3,13 @@ package tk.sunthree.upahku;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 
-import com.anychart.AnyChart;
-import com.anychart.AnyChartView;
-import com.anychart.chart.common.dataentry.DataEntry;
-import com.anychart.chart.common.dataentry.ValueDataEntry;
-import com.anychart.charts.Cartesian;
-import com.anychart.core.cartesian.series.Column;
-import com.anychart.enums.Anchor;
-import com.anychart.enums.HoverMode;
-import com.anychart.enums.Position;
-import com.anychart.enums.TooltipPositionMode;
+import com.github.mikephil.charting.charts.BarChart;
+import com.github.mikephil.charting.data.BarData;
+import com.github.mikephil.charting.data.BarDataSet;
+import com.github.mikephil.charting.data.BarEntry;
+import com.github.mikephil.charting.utils.ColorTemplate;
 
 import java.util.ArrayList;
-import java.util.List;
 
 public class Chart extends AppCompatActivity {
 
@@ -25,40 +19,35 @@ public class Chart extends AppCompatActivity {
         setContentView(R.layout.activity_chart);
         setTitle("UMR Apps");
 
-        AnyChartView anyChartView = findViewById(R.id.any_chart_view);
-        anyChartView.setProgressBar(findViewById(R.id.progress_bar));
+        BarChart chart = (BarChart) findViewById(R.id.barchart);
 
-        Cartesian cartesian = AnyChart.column();
+        ArrayList NoOfEmp = new ArrayList();
 
-        List<DataEntry> data = new ArrayList<>();
-        data.add(new ValueDataEntry("2016", 3100000));
-        data.add(new ValueDataEntry("2017", 3355750));
-        data.add(new ValueDataEntry("2018", 3648035));
-        data.add(new ValueDataEntry("2019", 3940973));
+        NoOfEmp.add(new BarEntry(2008, 945f));
+        NoOfEmp.add(new BarEntry(2009, 1040f));
+        NoOfEmp.add(new BarEntry(2010, 1133f));
+        NoOfEmp.add(new BarEntry(2011, 1240f));
+        NoOfEmp.add(new BarEntry(2012, 1369f));
+        NoOfEmp.add(new BarEntry(2013, 1487f));
+        NoOfEmp.add(new BarEntry(2014, 1501f));
 
-        Column column = cartesian.column(data);
+        ArrayList<String> labels = new ArrayList<String>();
+        labels.add("January");
+        labels.add("February");
+        labels.add("March");
+        labels.add("April");
+        labels.add("May");
+        labels.add("June");
 
-        column.tooltip()
-                .titleFormat("{%X}")
-                .position(Position.CENTER_BOTTOM)
-                .anchor(Anchor.CENTER_BOTTOM)
-                .offsetX(0d)
-                .offsetY(5d)
-                .format("Rp. {%Value}{groupsSeparator: }");
+        BarDataSet bardataset = new BarDataSet(NoOfEmp, "UMR Per Tahun");
+        chart.animateXY(2000, 2000);
+        BarData data = new BarData(bardataset);
 
-        cartesian.animation(true);
-        cartesian.title("Data UMP DKI Jakarta");
+        bardataset.setColors(ColorTemplate.COLORFUL_COLORS);
+        chart.setData(data);
+        chart.setFitBars(true); // make the x-axis fit exactly all bars
+        chart.invalidate(); // refresh
+        data.setBarWidth(0.9f); // set custom bar width
 
-        cartesian.yScale().minimum(0d);
-
-        cartesian.yAxis(0).labels().format("Rp. {%Value}{groupsSeparator: }");
-
-        cartesian.tooltip().positionMode(TooltipPositionMode.POINT);
-        cartesian.interactivity().hoverMode(HoverMode.BY_X);
-
-        cartesian.xAxis(0).title("Tahun");
-        cartesian.yAxis(0).title("UMP");
-
-        anyChartView.setChart(cartesian);
     }
 }

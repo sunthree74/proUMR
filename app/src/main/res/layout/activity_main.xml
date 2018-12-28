@@ -4,60 +4,35 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
-
-    <android.support.design.widget.AppBarLayout
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar">
-
-        <android.support.v7.widget.Toolbar
-            android:id="@+id/toolbar"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:paddingLeft="10dp"
+        android:paddingRight="10dp"
+        android:paddingTop="16dp">
+        <android.support.design.widget.TextInputLayout
+            android:id="@+id/input_search_layout"
             android:layout_width="match_parent"
-            android:layout_height="?attr/actionBarSize"
-            android:background="?attr/colorPrimary"
-            app:layout_scrollFlags="scroll|enterAlways"
-            app:popupTheme="@style/ThemeOverlay.AppCompat.Light" />
-    </android.support.design.widget.AppBarLayout>
-
-    <TableLayout
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:stretchColumns="*"
-        >
-        <TableRow>
-            <LinearLayout
-                android:layout_width="fill_parent"
-                android:layout_height="match_parent"
-                android:layout_marginTop="?attr/actionBarSize"
-                android:orientation="vertical"
-                android:paddingLeft="20dp"
-                android:paddingRight="20dp"
-                android:paddingTop="60dp">
-                <android.support.design.widget.TextInputLayout
-                    android:id="@+id/input_search_layout"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    >
-                    <EditText
-                        android:id="@+id/input_search"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:hint="@string/hint_search">
-                        <requestFocus/>
-                    </EditText>
-                </android.support.design.widget.TextInputLayout>
-            </LinearLayout>
-        </TableRow>
-        <TableRow>
-            <ListView
-                android:id="@+id/listKota"
+            android:layout_height="wrap_content"
+            >
+            <EditText
+                android:id="@+id/input_search"
                 android:layout_width="match_parent"
-                android:layout_height="431dp"
-                android:layout_marginStart="8dp"
-                android:layout_marginEnd="8dp"
-                android:layout_marginBottom="32dp">
-            </ListView>
-        </TableRow>
-    </TableLayout>
+                android:layout_height="wrap_content"
+                android:hint="@string/hint_search">
+                <requestFocus/>
+            </EditText>
+        </android.support.design.widget.TextInputLayout>
+        <ListView
+            android:id="@+id/listKota"
+            android:layout_width="match_parent"
+            android:layout_height="431dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginEnd="8dp"
+            android:layout_marginBottom="32dp">
+        </ListView>
+
+    </LinearLayout>
 
 </android.support.constraint.ConstraintLayout>
